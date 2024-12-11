@@ -1,0 +1,14 @@
+.idea/
+.mvn
+target
+.terraform/
+**/.terraform/*
+*.tfstate
+.tfstate.
+*.log
+*.tfvars
+.terraform.lock.hlc
+terraform.tfstate.backup
+terraform.tfstate
+.*.lock.hcl
+*.tfstate.*

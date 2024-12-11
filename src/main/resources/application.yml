@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: "WebFutebol"
+  datasource:
+    url: jdbc:postgresql://postgres-db:5432/novobanco
+    username: admin
+    password: admin
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  doc:
+    packages-to-scan: com.jogador.futebol.control

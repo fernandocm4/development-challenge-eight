@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  postgres-db:
+    container_name: postgres-db
+    image: postgres
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "admin"
+      POSTGRES_DB: "novobanco"
+      TZ: "America/Sao_Paulo"
+
+    ports:
+      - "15432:5432"
+    networks:
+      - docker-network
+    restart: always
+
+  futebol-api:
+    container_name: futebol-api
+    image: darkar007/futebol-api-2:latest
+    environment:
+      SERVER_PORT: 3000
+      SPRING_PROFILES_ACTIVE: prod
+      TZ: "America/Sao_Paulo"
+    ports:
+      - "80:3000"
+    depends_on:
+      - postgres-db
+    networks:
+      - docker-network
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 700M
+        reservations:
+          memory: 700M
+
+
+networks:
+  docker-network:
+    driver: bridge
