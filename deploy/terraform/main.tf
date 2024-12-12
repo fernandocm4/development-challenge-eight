@@ -69,6 +69,7 @@ resource "aws_instance" "futebol_instance" {
 }
 
 
+#grafana
 
 resource "aws_grafana_workspace" "futebol_gf_workspace" {
   name = "futebol_gf"

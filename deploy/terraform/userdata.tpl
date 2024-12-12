@@ -27,7 +27,7 @@
 
 #clone your project from git repository
     git clone https://github.com/fernandocm4/development-challenge-eight.git
-    cd webfutebol
+    cd development-challenge-eight
     git checkout master
     git pull
     cd deploy/docker
