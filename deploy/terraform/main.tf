@@ -145,6 +145,6 @@ resource "aws_iam_policy_attachment" "futebol_policy_role" {
 resource "aws_grafana_role_association" "role" {
   role         = "ADMIN"
   #id do usuário criado no IAM Idnetify Center para acesso ao Grafana
-  user_ids     = [""]
+  user_ids     = ["317be5b0-a0f1-70aa-7d84-e8671432c8fd"]
   workspace_id = aws_grafana_workspace.futebol_gf_workspace.id
 }
